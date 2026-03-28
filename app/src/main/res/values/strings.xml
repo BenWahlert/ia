@@ -5,10 +5,24 @@
     <string name="add_task">Add Task</string>
     <string name="task_title">Task title</string>
     <string name="subject">Subject</string>
+    <string name="new_subject">New subject</string>
+    <string name="add_subject">Add Subject</string>
+    <string name="select_subject">Select subject</string>
     <string name="duration_minutes">Duration (minutes)</string>
+    <string name="deadline_date">Deadline</string>
+    <string name="importance">Importance (1-5)</string>
+    <string name="difficulty">Difficulty (1-5)</string>
     <string name="save_task">Save Task</string>
     <string name="no_tasks_yet">No tasks yet</string>
     <string name="delete">Delete</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="nav_open">Open navigation drawer</string>
+    <string name="nav_close">Close navigation drawer</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_archive">Archive</string>
+    <string name="nav_add_subject">Add Subject</string>
+    <string name="archived_tasks">Archive</string>
+    <string name="no_archived_tasks">No archived tasks yet</string>
+    <string name="subject_added">Subject added</string>
 </resources>

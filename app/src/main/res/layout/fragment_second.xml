@@ -25,13 +25,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/subject">
+        android:hint="@string/select_subject"
+        app:endIconMode="dropdown_menu">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/edit_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="none"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:minHeight="56dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,6 +51,51 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/deadline_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_deadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/importance">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_importance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/difficulty">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_difficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />

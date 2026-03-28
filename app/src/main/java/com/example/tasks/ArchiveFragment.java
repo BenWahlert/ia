@@ -11,13 +11,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.tasks.databinding.FragmentFirstBinding;
+import com.example.tasks.databinding.FragmentArchiveBinding;
 
 import java.util.List;
 
-public class FirstFragment extends Fragment {
+public class ArchiveFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentArchiveBinding binding;
     private TaskViewModel viewModel;
     private TaskAdapter adapter;
 
@@ -26,26 +26,25 @@ public class FirstFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentArchiveBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(requireActivity()).get(TaskViewModel.class);
 
         adapter = new TaskAdapter(
-            taskId -> viewModel.removeTask(taskId),
-            (task, isChecked) -> viewModel.updateTaskStatus(task, isChecked),
-            this::navigateToEdit
+                taskId -> viewModel.removeTask(taskId),
+                (task, isChecked) -> viewModel.updateTaskStatus(task, isChecked),
+                this::navigateToEdit
         );
         binding.recyclerTasks.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recyclerTasks.setAdapter(adapter);
 
-        viewModel.getTasks().observe(getViewLifecycleOwner(), tasks -> {
+        viewModel.getArchivedTasks().observe(getViewLifecycleOwner(), tasks -> {
             adapter.setTasks(tasks);
             updateEmptyState(tasks);
         });
@@ -55,7 +54,7 @@ public class FirstFragment extends Fragment {
         Bundle args = new Bundle();
         args.putLong(SecondFragment.ARG_TASK_ID, taskId);
         NavHostFragment.findNavController(this)
-                .navigate(R.id.action_FirstFragment_to_SecondFragment, args);
+                .navigate(R.id.action_ArchiveFragment_to_SecondFragment, args);
     }
 
     private void updateEmptyState(List<Task> tasks) {
@@ -73,5 +72,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

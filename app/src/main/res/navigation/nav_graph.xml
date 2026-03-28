@@ -15,6 +15,17 @@
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ArchiveFragment"
+        android:name="com.example.tasks.ArchiveFragment"
+        android:label="@string/archived_tasks"
+        tools:layout="@layout/fragment_archive">
+
+        <action
+            android:id="@+id/action_ArchiveFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.tasks.SecondFragment"
@@ -25,4 +36,10 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/AddSubjectFragment"
+        android:name="com.example.tasks.AddSubjectFragment"
+        android:label="@string/add_subject"
+        tools:layout="@layout/fragment_add_subject" />
 </navigation>
