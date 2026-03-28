@@ -71,7 +71,7 @@ public class Task {
         daysRemaining = (deadline - System.currentTimeMillis()) / 86400000;
         urgencyScore = Math.max(0, 100 - (daysRemaining / 30) * 100);
         importanceScore = (importance / 5.0) * 100;
-        durationScore = Math.min(100, (duration / 8.0) * 100);
+        durationScore = Math.min(100, (duration / 480.0) * 100);
         difficultyScore = (difficulty / 5.0) * 100;
         priority = (urgencyScore * 0.5) + (importanceScore * 0.15) + (difficultyScore * 0.15) + (durationScore * 0.2);
     }
